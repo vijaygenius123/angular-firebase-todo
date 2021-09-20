@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
