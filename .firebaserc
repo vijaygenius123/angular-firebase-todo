@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todo-d1e86": {
+      "hosting": {
+        "angular-firebase-todo": [
+          "todo-d1e86"
+        ]
+      }
+    }
+  }
+}
