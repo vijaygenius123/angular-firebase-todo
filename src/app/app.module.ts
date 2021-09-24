@@ -9,6 +9,10 @@ import { TodosComponent } from './todos/todos.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {AngularFireModule} from "@angular/fire/compat";
+
+import {environment} from "../environments/environment";
+import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'to-do'),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
