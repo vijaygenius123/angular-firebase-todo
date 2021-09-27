@@ -27,4 +27,8 @@ export class TodosService {
         })
       )
   }
+
+  getTodos(){
+    return this.todos
+  }
 }
