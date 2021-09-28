@@ -10,6 +10,8 @@ import {Todo} from "../models/todo.model";
 export class TodosComponent implements OnInit {
   faSquare = faSquare;
   faCheckSquare = faCheckSquare;
+  todos: Todo[] = []
+  finishedTodos: Todo[]= []
   constructor(private  todoService: TodosService) {
 
   }
@@ -21,7 +23,8 @@ export class TodosComponent implements OnInit {
   getTodos(){
     this.todoService.getTodos()
       .subscribe((response: Todo[]) => {
-        console.log(response)
+        this.todos = response.filter(t => !t.completed)
+        this.finishedTodos = response.filter(t => t.completed)
       })
   }
 
