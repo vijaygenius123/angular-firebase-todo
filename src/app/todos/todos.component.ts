@@ -28,4 +28,12 @@ export class TodosComponent implements OnInit {
       })
   }
 
+  addTodo(title: string){
+    if(title === ''){
+      return
+    }
+    const todo: Todo = {title, completed: false}
+    this.todoService.addTodo(todo);
+  }
+
 }

@@ -31,4 +31,8 @@ export class TodosService {
   getTodos(){
     return this.todos
   }
+
+  addTodo(todo: Todo){
+    this.todosCollection.add(todo);
+  }
 }

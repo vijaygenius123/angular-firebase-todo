@@ -5,9 +5,9 @@
       <div class="col-sm-8 col-md-6">
         <h1 class="display-4"> Todos </h1>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Task">
+          <input type="text" class="form-control" placeholder="Task" #todoTitle>
           <div class="input-group-append">
-            <button class="btn btn-outline-success">Add Todo</button>
+            <button class="btn btn-outline-success" (click)="addTodo(todoTitle.value); todoTitle.value = ''">Add Todo</button>
           </div>
         </div>
       </div>
