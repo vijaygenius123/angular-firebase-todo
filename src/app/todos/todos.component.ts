@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faSquare, faCheckSquare} from '@fortawesome/free-regular-svg-icons'
+import {faSquare, faCheckSquare, faTrashAlt} from '@fortawesome/free-regular-svg-icons'
 import {TodosService} from "../services/todos.service";
 import {Todo} from "../models/todo.model";
 @Component({
@@ -10,6 +10,8 @@ import {Todo} from "../models/todo.model";
 export class TodosComponent implements OnInit {
   faSquare = faSquare;
   faCheckSquare = faCheckSquare;
+  faTrashAlt = faTrashAlt;
+
   todos: Todo[] = []
   finishedTodos: Todo[]= []
   constructor(private  todoService: TodosService) {
@@ -34,6 +36,10 @@ export class TodosComponent implements OnInit {
     }
     const todo: Todo = {title, completed: false}
     this.todoService.addTodo(todo);
+  }
+
+  deleteTodo(todo: Todo){
+    this.todoService.deleteTodo(todo);
   }
 
 }

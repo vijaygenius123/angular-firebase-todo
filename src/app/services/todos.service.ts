@@ -10,13 +10,15 @@ import {map} from "rxjs/operators";
 export class TodosService {
 
   todosCollection: AngularFirestoreCollection<Todo>
-  //todoDoc: AngularFirestoreDocument<Todo>
+  todoDoc: AngularFirestoreDocument<Todo> | undefined
   todos: Observable<Todo[]>
 
 
   constructor(private fs: AngularFirestore) {
+
     this.todosCollection = this.fs.collection('todos')
     this.todos = this.todosCollection.snapshotChanges()
+
       .pipe(
         map(changes => {
           return changes.map(d => {
@@ -35,4 +37,10 @@ export class TodosService {
   addTodo(todo: Todo){
     this.todosCollection.add(todo);
   }
+
+  deleteTodo(todo: Todo){
+    this.todoDoc = this.fs.doc(`todos/${todo.id}`)
+    this.todoDoc.delete();
+  }
+
 }

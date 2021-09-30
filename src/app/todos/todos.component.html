@@ -38,6 +38,7 @@
         <li class="list-group-item" *ngFor="let todo of finishedTodos">
           <fa-icon [icon]="faCheckSquare"></fa-icon>
           {{todo.title}}
+          <fa-icon [icon]="faTrashAlt" class="float-end mt-1" (click)="deleteTodo(todo)"></fa-icon>
         </li>
       </ul>
     </div>
