@@ -43,4 +43,9 @@ export class TodosService {
     this.todoDoc.delete();
   }
 
+  toggleTodoStatus(todo: Todo){
+    this.todoDoc = this.fs.doc(`todos/${todo.id}`)
+    this.todoDoc.update(todo);
+  }
+
 }

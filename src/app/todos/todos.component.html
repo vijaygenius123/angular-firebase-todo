@@ -20,8 +20,8 @@
     <div class="col-sm-8 col-md-6">
       <ul class="list-group">
 
-        <li class="list-group-item" *ngFor="let todo of todos">
-          <fa-icon [icon]="faSquare"></fa-icon>
+        <li class="list-group-item" *ngFor="let todo of todos" >
+          <fa-icon [icon]="faSquare" (click)="toggleTodoStatus(todo)"></fa-icon>
           {{todo.title}}
         </li>
       </ul>
@@ -35,8 +35,8 @@
     <div class="col-sm-8 col-md-6">
       <h2 class="display-6 text-center">Finished Todos</h2>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let todo of finishedTodos">
-          <fa-icon [icon]="faCheckSquare"></fa-icon>
+        <li class="list-group-item" *ngFor="let todo of finishedTodos" >
+          <fa-icon [icon]="faCheckSquare" (click)="toggleTodoStatus(todo)"></fa-icon>
           {{todo.title}}
           <fa-icon [icon]="faTrashAlt" class="float-end mt-1" (click)="deleteTodo(todo)"></fa-icon>
         </li>
